@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Error Page</title>
+	</head>
+	<body>
+	<script type="text/javascript">
+		const userAction = async () => {
+			console.log("sdfsdfsdfsdfs")
+		  	const response = await fetch('http://localhost:9001/actuator',{
+		  		headers: {
+		  			'Access-Control-Allow-Origin':"*"
+		  		}
+		  	});
+			//const response = await fetch('http://localhost:9090/topics');
+			console.log("Response Payload: ")
+			console.log( response);
+		  const myJson = await response.json(); //extract JSON from the http response
+		  // do something with myJson
+		  console.log(myJson)
+		}
+	</script>
+		<b>Bismillah</b> <br><br><br>
+		<button name="fetch" onclick="userAction()">Fetch</button>
+	</body>
+</html>
